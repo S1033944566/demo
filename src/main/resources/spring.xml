@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+
+    <bean id="redisService" class="com.baozun.demo.service.impl.RedisServiceImpl">
+        <property name="jedisPool" ref="jedisPool"></property>
+        
+    </bean>
+
+    <bean id="jedisPool" class="redis.clients.jedis.JedisPool">
+        <constructor-arg  ref="redisconfig"></constructor-arg>
+        <constructor-arg type="java.lang.String" value="${spring.redis.host}"></constructor-arg>
+        <constructor-arg type="int" value="${spring.redis.port}"></constructor-arg>
+        <constructor-arg type="int" value="${spring.redis.timeout}"></constructor-arg>
+        <!-- 本地测试注释掉以下代码 -->
+        <constructor-arg type="java.lang.String" value="${spring.redis.password}"></constructor-arg>
+    </bean>
+
+    <bean id="redisconfig" class="redis.clients.jedis.JedisPoolConfig">
+        <property  name="maxActive" >
+            <value type="int">${spring.redis.pool.max-active}</value>
+        </property>
+        <property  name="maxIdle" >
+            <value type="int">${spring.redis.pool.max-idle}</value>
+        </property>
+        <property  name="maxWait">
+            <value type="long">${spring.redis.pool.max-wait}</value>
+        </property>
+        <property  name="testOnBorrow" >
+            <value type="boolean">true</value>
+        </property>
+    </bean>
+</beans>
