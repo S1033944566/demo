@@ -17,6 +17,7 @@ public class Test2 {
 
 
     public static void main(String[] args) {
+
         Jedis jedis = new Jedis("47.100.201.19", 6379);
         jedis.auth("redis123**");
         System.out.println(jedis.ping());
