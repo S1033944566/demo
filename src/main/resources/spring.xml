@@ -16,7 +16,6 @@
         <constructor-arg type="java.lang.String" value="${spring.redis.host}"></constructor-arg>
         <constructor-arg type="int" value="${spring.redis.port}"></constructor-arg>
         <constructor-arg type="int" value="${spring.redis.timeout}"></constructor-arg>
-        <!-- 本地测试注释掉以下代码 -->
         <constructor-arg type="java.lang.String" value="${spring.redis.password}"></constructor-arg>
     </bean>
 
@@ -31,7 +30,7 @@
             <value type="long">${spring.redis.pool.max-wait}</value>
         </property>
         <property  name="testOnBorrow" >
-            <value type="boolean">true</value>
+            <value type="boolean">${spring.redis.pool.testonborrow}</value>
         </property>
     </bean>
 </beans>

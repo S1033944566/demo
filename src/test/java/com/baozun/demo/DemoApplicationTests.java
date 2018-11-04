@@ -2,6 +2,7 @@ package com.baozun.demo;
 
 import com.baozun.demo.task.PimSkuData;
 import com.mongodb.BasicDBObject;
+import com.mongodb.MongoClient;
 import com.mongodb.util.JSON;
 import net.sf.json.JSONObject;
 import org.junit.Test;
@@ -89,7 +90,6 @@ public class DemoApplicationTests {
 		//mongoTemplate.getCollection("").
 
     }
-
 
 }
 

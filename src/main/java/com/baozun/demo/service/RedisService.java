@@ -1,5 +1,7 @@
 package com.baozun.demo.service;
 
+import java.util.Collection;
+
 /**
  * @description:
  * @author: Rover Wang
@@ -12,14 +14,12 @@ public interface RedisService {
 
     void setValue(String key, String value, int expireTime);
 
-    void setValue(String key, int value);
-
-    void setValue(String key, int value, int expireTime);
-
     <T> void setObject(String key, T t);
 
     <T> void setObject(String key, T t, int expireTime);
 
-    String get();
+    Object getObject(String f);
+
+    String get(String key);
 
 }

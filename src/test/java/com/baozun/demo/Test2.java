@@ -21,7 +21,7 @@ public class Test2 {
         jedis.auth("redis123**");
         System.out.println(jedis.ping());
 
-        //jedis.set("test", "testvalue");
+        jedis.set("test", "testvalue");
 
         jedis.setex("key", 10, "value");
 
