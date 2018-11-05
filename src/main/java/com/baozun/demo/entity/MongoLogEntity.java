@@ -11,7 +11,7 @@ import java.util.Date;
 public class MongoLogEntity implements Serializable {
 
     /**
-     *
+     * 序列号
      */
     private static final long serialVersionUID = -8795573304168185092L;
 

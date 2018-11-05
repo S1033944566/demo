@@ -25,6 +25,7 @@ public class Test1 {
     private MongoOperations mongoOperations;
 
 
+    
     @Test
     public void test1() {
         MongoLogEntity mongoLogEntity = new MongoLogEntity.Builder().createDate(new Date()).creater("").updateDate(null).updater("").operationType("add").domain(new ArrayList<String>()).collection("testorderstatus").build();

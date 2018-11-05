@@ -31,6 +31,7 @@ public class WriteLog2MongoUtil {
 
             mongoOperations.insert(basicDBObject, mongoLogEntity.getCollection());
             logger.info(String.format("write %s log to %s end。。。。。。。", mongoLogEntity.getOperationType(), mongoLogEntity.getCollection()));
+
         } catch (Exception e) {
             logger.error(String.format("write %s log failed.", mongoLogEntity.getOperationType()), e.getMessage());
             e.printStackTrace();
