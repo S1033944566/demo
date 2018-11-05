@@ -25,15 +25,9 @@ public class UserMapperTest {
     private RedisService redisService;
 
     @Test
-    public void test1()
-    {
+    public void test1() {
         System.out.println(userMapper.getCount());
         System.out.println(userMapper.getAll().get(0).getUserSex().name());
     }
 
-    @Test
-    public void test2() {
-        redisService.setValue("ww", "rerr");
-
-    }
 }
