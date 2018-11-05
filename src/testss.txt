@@ -1,1 +1,0 @@
-{"requestId":"PIM-5baf340e05f95","shopId":"TBILSTORE11","pimSku":["0900-MSS110-T00Z00A01", "0900-MSS110-T00Z00A01"],"code":0,"msg":""}

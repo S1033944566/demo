@@ -1,7 +1,6 @@
 package com.baozun.demo;
 
 import com.baozun.demo.mapper.UserMapper;
-import com.baozun.demo.service.RedisService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,9 +20,6 @@ public class UserMapperTest {
     @Autowired
     private UserMapper userMapper;
 
-    @Autowired
-    private RedisService redisService;
-
     @Test
     public void test1()
     {
@@ -31,9 +27,4 @@ public class UserMapperTest {
         System.out.println(userMapper.getAll().get(0).getUserSex().name());
     }
 
-    @Test
-    public void test2() {
-        redisService.setValue("ww", "rerr");
-
-    }
 }
