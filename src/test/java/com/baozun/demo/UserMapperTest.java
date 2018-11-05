@@ -21,9 +21,6 @@ public class UserMapperTest {
     @Autowired
     private UserMapper userMapper;
 
-    @Autowired
-    private RedisService redisService;
-
     @Test
     public void test1() {
         System.out.println(userMapper.getCount());
