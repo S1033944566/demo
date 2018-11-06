@@ -28,8 +28,8 @@ public class TestRedis {
         Domain domain = new Domain("domainName");
         list.add(domain);
         list.add(domain);
+//加注解
 
-        
 
         Set set = new HashSet();
         set.add("11111");
