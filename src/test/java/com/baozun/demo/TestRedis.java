@@ -24,28 +24,8 @@ public class TestRedis {
 
     @Test
     public void testCollection() {
-        List<Domain> list = new ArrayList<>();
-        Domain domain = new Domain("domainName");
-        list.add(domain);
-        list.add(domain);
-//加注解
-
-
-        Set set = new HashSet();
-        set.add("11111");
-
-        Map<String, String> map = new HashMap<>();
-        map.put("map", "mapValue");
-
-        redisService.setObject("list", list, 10);
-        redisService.setObject("set", set);
-        redisService.setObject("map", map);
-        redisService.setObject("int", 1111);
-        redisService.setValue("str", "2222");
-        List<Domain> ll = (ArrayList)redisService.getObject("list");
-        System.out.println(ll.get(0).getName());
-        System.out.println(redisService.getObject("set"));
-        System.out.println(redisService.getObject("int"));
+        redisService.setValue("shanxiang", "123456");
+        redisService.setObject("zhangsan", new Domain("zhangsan"));
 
     }
 
@@ -56,8 +36,15 @@ public class TestRedis {
         redisService.setObject("domain", domain);
         Domain doamin = (Domain) redisService.getObject("domain");
         System.out.println(doamin.getName());
+        List list = new ArrayList<String>();
+        list.add("123123122312");
+        redisService.setObject("list", list);
 
-
+        System.out.println(redisService.get("shanxiang"));
+        Domain domain1 = (Domain)redisService.getObject("zhangsan");
+        System.out.println(domain1.getName());
+        List<?> list1 = (List<?>) redisService.getObject("list");
+        System.out.println(list1.get(0));
     }
 }
 class Domain implements Serializable {

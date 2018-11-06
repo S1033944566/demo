@@ -8,8 +8,8 @@
        http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <mongo:mongo-client id="mongoClient" host="47.100.201.19" port="27017" credentials="root:root123**@rover"/>
-    <mongo:db-factory id="mongoDbFactory" dbname="rover" mongo-ref="mongoClient"></mongo:db-factory>
+    <mongo:mongo-client id="mongoClient" host="47.100.201.19" port="27017" credentials="shan:shan**@shan"/>
+    <mongo:db-factory id="mongoDbFactory" dbname="shan" mongo-ref="mongoClient"></mongo:db-factory>
     <mongo:template id="mongoTemplate" db-factory-ref="mongoDbFactory" write-concern="NORMAL"/>
 
     <bean id="redisService" class="com.baozun.demo.service.impl.RedisServiceImpl">

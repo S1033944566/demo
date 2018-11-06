@@ -37,8 +37,8 @@ public class DemoApplicationTests {
 
 	@Test
 	public void testMongo() {
-		BasicDBObject basicDBObject = new BasicDBObject();
-		PimSkuData data = new PimSkuData();
+
+		/*PimSkuData data = new PimSkuData();
 		List<String> pimSku = new ArrayList<String>();
         String str = "{\"requestId\":\"PIM-5baf340e05f95\",\"shopId\":\"TBILSTORE11\",\"pimSku\":[\"0900-MSS110-T00Z00A01\", \"0901-MSS110-T00Z00A01\", \"0902-MSS110-T00Z00A01\"],\"code\":0,\"msg\":\"\"}";
 
@@ -49,18 +49,33 @@ public class DemoApplicationTests {
             pimSku.add(s.replaceAll("\"", ""));
         }
 
-		List<PimSkuData> dataList = new ArrayList<PimSkuData>();
-
+		List<PimSkuData> dataList = new ArrayList<PimSkuData>();*/
+		BasicDBObject basicDBObject = new BasicDBObject();
 		basicDBObject.put("createTime", new Date());
 		basicDBObject.put("updateTime", null);
-		basicDBObject.put("isSend", 0);// 未发送PIM
+		basicDBObject.put("isSend", 0);
 		basicDBObject.put("requestId", "089i8764");
 		basicDBObject.put("shopId", "nebulashop");
-		basicDBObject.put("pimSku", pimSku);
+		basicDBObject.put("pimSku", new ArrayList<String>());
 		basicDBObject.put("count", 0);
 
-		mongoOperations.insert(basicDBObject, "product_pimsku2pim_2018");
+		mongoOperations.insert(basicDBObject, "table");
 
+		int num = 1 / 0;
+
+		/**
+		 * Query queryUpdate = new Query();
+
+		 queryUpdate.addCriteria(Criteria.where("requestId").is(requestId));
+		 Update update = new Update().set("isSend", 1).set("time", new Date()).set("count", pimSku.getCount() + 1);
+		 */
+		Query query = new Query();
+		query.addCriteria(Criteria.where("requestId").is("089i8764"));
+		Update update = new Update();
+		update.set("shopId", "1231234").set("pimSku", "0000000");
+		mongoOperations.updateMulti(query, update, "table");
+
+//		mongoOperations.updateMulti(null, null, null)
 	}
 
 	@Test
