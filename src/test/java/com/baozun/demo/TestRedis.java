@@ -29,6 +29,8 @@ public class TestRedis {
         list.add(domain);
         list.add(domain);
 
+        
+
         Set set = new HashSet();
         set.add("11111");
 
